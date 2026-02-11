@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Filament\Resources\Units\Pages;
+
+use App\Filament\Resources\Units\UnitResource;
+use Filament\Resources\Pages\CreateRecord;
+
+class CreateUnit extends CreateRecord
+{
+    protected static string $resource = UnitResource::class;
+
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        $data['is_active'] = true;
+
+        return $data;
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+    protected function getCreatedNotificationTitle(): ?string
+    {
+        return 'Unit created';
+    }
+}
