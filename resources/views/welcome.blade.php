@@ -67,25 +67,23 @@
     <main class="min-h-screen">
         <!-- Hero Section -->
         <section class="pt-20 pb-16 px-4">
-            <form method="GET" action="{{ route('properties.search-product') }}">
-                <div class="relative max-w-2xl mx-auto group">
-                    <div class="absolute -inset-1 bg-linear-to-r from-primary/50 to-blue-600/50 rounded-xl blur opacity-25 group-focus-within:opacity-50 transition duration-1000"></div>
+            <form method="GET" action="{{ route('properties.search-product') }}" class="relative max-w-2xl mx-auto group">
+                <div class="absolute -inset-1 bg-linear-to-r from-primary/50 to-blue-600/50 rounded-xl blur opacity-25 group-focus-within:opacity-50 transition duration-1000"></div>
 
-                    <div class="relative flex items-center bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-2 custom-shadow">
-                        <span class="material-icons text-slate-400 ml-4">link</span>
+                <div class="relative flex items-center bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-2 custom-shadow">
+                    <span class="material-icons text-slate-400 ml-4">search</span>
 
-                        <input 
-                            name="query"
-                            class="w-full bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder-slate-500 py-3 px-4"
-                            placeholder="Search product name (Cement, Nails, etc.)"
-                            type="text"
-                        />
+                    <input 
+                        name="query"
+                        class="w-full bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder-slate-500 py-3 px-4"
+                        placeholder="Search product name (Cement, Nails, etc.)"
+                        type="text"
+                    />
 
-                        <button type="submit"
-                            class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold transition-all flex items-center gap-2">
-                            <span>Search</span>
-                        </button>
-                    </div>
+                    <button type="submit"
+                        class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                        Search
+                    </button>
                 </div>
             </form>
         </section>

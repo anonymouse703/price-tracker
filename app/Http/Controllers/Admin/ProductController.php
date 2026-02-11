@@ -19,10 +19,6 @@ class ProductController extends Controller
     {
         $query = trim((string) $request->query('query', ''));
 
-        if (strlen($query) < 2) {
-            return response()->json([]);
-        }
-
         $products = $this->productRepository
             ->with(['brand','unit'])
             ->filterByKeyword($query)
