@@ -22,9 +22,14 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     {
         if (!empty($keyword)) {
              return $this->filter(static function (Builder $builder) use($keyword) {
-                $builder->when($keyword, fn($q) =>
-                    $q->where('name', 'like', "%{$keyword}%")
+                $builder->when($keyword, fn ($q) =>
+                    $q->where(fn ($query) =>
+                        $query->where('name', 'like', "%{$keyword}%")
+                            ->orWhere('sku', 'like', "%{$keyword}%")
+                            ->orWhere('barcode', '%'.$keyword.'%')
+                    )
                 );
+
             });
         }
 
